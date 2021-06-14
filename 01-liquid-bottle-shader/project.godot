@@ -176,7 +176,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="liquid-bottle-shader"
+config/name="Liquid Bottle Shader"
 run/main_scene="res://bottle/Bottle.tscn"
 config/icon="res://icon.png"
 
