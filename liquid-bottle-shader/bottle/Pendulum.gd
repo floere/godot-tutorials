@@ -9,11 +9,12 @@ export(float) var gravity = 0.4 * 60 # 98
 export(float) var damping = 0.995
 export(float) var angular_multiplier = 0.0003
 
-var previous_global_position = global_position
+var previous_global_position
 var angular_velocity = 0.0
 var angular_acceleration = 0.0
 
 func _ready() -> void:
+	previous_global_position = global_position
 	end_position = global_position + Vector2(length, 0)
 	angle = Vector2.ZERO.angle_to(end_position - global_position)
 	angular_velocity = 0.0
@@ -42,8 +43,8 @@ func add_angular_velocity(force:float) -> void:
 
 func _physics_process(delta) -> void:
 	process_velocity(delta)
-	update() # For the draw.
+	# update() # For the draw.
 
-func _draw() -> void:
-	draw_line(Vector2.ZERO, end_position - global_position, Color.black, 1.0, false)
-	draw_circle(end_position - global_position, 2.0, Color.red)
+#func _draw() -> void:
+#	draw_line(Vector2.ZERO, end_position - global_position, Color.black, 1.0, false)
+#	draw_circle(end_position - global_position, 2.0, Color.red)

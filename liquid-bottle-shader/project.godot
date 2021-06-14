@@ -87,7 +87,7 @@ _global_script_classes=[ {
 "base": "VisualShaderNodeCustom",
 "class": "VisualShaderNodePerlinNoise3D",
 "language": "GDScript",
-"path": "res://bottle/PerlinNoise3D.gd"
+"path": "res://addons/visual_shader_node_library/shader_nodes/common/noise/perlin_3d.gd"
 }, {
 "base": "VisualShaderNodeCustom",
 "class": "VisualShaderNodePerlinNoise4D",
@@ -176,7 +176,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="LiquidShaderBottle"
+config/name="liquid-bottle-shader"
 run/main_scene="res://bottle/Bottle.tscn"
 config/icon="res://icon.png"
 

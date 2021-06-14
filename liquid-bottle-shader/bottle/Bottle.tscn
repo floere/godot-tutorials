@@ -13,7 +13,7 @@ shader = ExtResource( 2 )
 shader_param/Color = Color( 1, 0, 0, 1 )
 shader_param/EdgeRotation = 0.0
 shader_param/Fill = 0.6
-shader_param/NoiseScale = 10.0
+shader_param/NoiseScale = 3.0
 shader_param/MinOpacity = 0.5
 shader_param/FillTexture = ExtResource( 4 )
 

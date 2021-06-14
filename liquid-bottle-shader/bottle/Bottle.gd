@@ -10,6 +10,5 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	t += delta
-	# global_rotation = t
 	position.x = 400 + 200 * sin(2 * t)
 	pass
