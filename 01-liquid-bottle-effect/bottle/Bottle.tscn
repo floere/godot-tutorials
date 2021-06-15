@@ -11,7 +11,7 @@
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 2 )
 shader_param/Color = Color( 1, 0, 0, 1 )
-shader_param/EdgeRotation = 0.5
+shader_param/SurfaceRotation = null
 shader_param/Fill = 0.6
 shader_param/NoiseScale = 3.0
 shader_param/MinOpacity = 0.5

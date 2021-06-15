@@ -8,8 +8,14 @@ To simulate the inertia of the liquid, I assume that the surface of the liquid b
 -> Visualize pendulum
 
 So now we have a pendulum, and the surface of the liquid is connected to the "string" of the pendulum.
-The angle between the string and the up direction is then fed into the shader.
-And the shader takes care of rendering the liquid level, the surface, and the noise effects that you can see.
+The angle between the string and the up direction is then fed into a shader.
+
+--> Shader
+
+This is the shader for the liquid.
+The shader takes care of rendering the liquid level, the surface, and the noise effects that you can see.
+I'm going to go over it at the end.
+First let me take the effect apart and explain its layers.
 
 -> Omni graffle
 
@@ -60,6 +66,12 @@ But it's not that simple, because if it would just rotate, it would be too thin 
 That's why it is also stretched sideways.
 The thinner the bottle, the more pronounced this stretching effect.
 
---> Godot
+-> Godot
 
 Now to finish up, let's look at the pendulum code.
+As a base, I've adapted NeZvers' pendulum code from their video, you can find the link in the description.
+What it essentially does is simulate this pendulum.
+
+--> Show example.
+
+In the Liquid node, I am then taking this angle, and passing it to the shader.
