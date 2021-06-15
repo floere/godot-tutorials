@@ -4,7 +4,7 @@ extends Position2D
 export(float) var length = 30
 # Unrealistic gravity to artificially slow down the movement.
 export(float) var gravity = 24 # 98
-# Arbitrary damping factor.
+# Damping factor.
 export(float) var damping = 0.995
 
 # The current position of the pendulum's weight. 
@@ -29,11 +29,11 @@ func process_velocity(delta : float) -> void:
 	add_angular_velocity((previous_global_position.x - global_position.x) * angular_multiplier)
 	# Calculate acceleration (see: http://www.myphysicslab.com/pendulum1.html)
 	var angular_acceleration = ((-gravity * delta) / length) * sin(angle)
-	# Increment velocity.
+	# Update velocity.
 	angular_velocity += angular_acceleration
-	# Arbitrary damping.
+	# Damping.
 	angular_velocity *= damping
-	# Increment angle.
+	# Update angle.
 	angle += angular_velocity
 	
 	# Calculate the new position of the weight.

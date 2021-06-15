@@ -39,3 +39,27 @@ This then results in a partially filled bottle.
 -> Godot / Shader
 
 Ok, let's have a look at the shader.
+It's quite simple:
+First of all, we have the two texture inputs.
+One is the mask, and one is the fill texture.
+There are three distinct areas of the shader:
+Here we multiply the mask with the color.
+The rest of the shader is concerned with the alpha.
+The whole bottom is concerned with adding visual interest to the effect, so adds some noise.
+In this case I am using a cellular noise 3d.
+Other noise types would work as well.
+The upper left area is concerned with modifying the UV for the fill texture.
+
+--> Example set edge rotation to 0.5.
+
+See how the fill texture rotates?
+But it's not that simple, because if it would just rotate, it would be too thin for the bottle.
+
+-> Omni
+
+That's why it is also stretched sideways.
+The thinner the bottle, the more pronounced this stretching effect.
+
+--> Godot
+
+Now to finish up, let's look at the pendulum code.
