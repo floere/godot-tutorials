@@ -1,18 +1,26 @@
 In this tutorial, I am going to give you an overview over how this effect works.
-I was inspired by Firebelley Games' 2D liquid vial effect, it's also on YoutTube, you can find the link in the description.
+I was inspired by Firebelley Games' 2D liquid vial effect.
+It's also on YouTube, you can find the link in the description.
 However, I was going for a liquid effect that also includes the inertia of the liquid.
 So I made this effect.
-To simulate the inertia of the liquid, I assume that the surface of the liquid behaves as if it was connected to the string of a pendulum.
-. I can show you in the example.
+
+It's made up of three parts.
+
+--> Show in Godot.
+
+First, the bottle itself.
+Behind it, the liquid.
+And then, the pendulum.
+The pendulum simply dictates how the liquid should behave.
+It gives it the inertia it needs to look good.
 
 -> Visualize pendulum
 
-So now we have a pendulum, and the surface of the liquid is connected to the "string" of the pendulum.
-The angle between the string and the up direction is then fed into a shader.
+The code on the liquid takes the angle of the pendulum and feeds it into the liquid shader.
 
 --> Shader
 
-This is the shader for the liquid.
+This is the visual shader for the liquid.
 The shader takes care of rendering the liquid level, the surface, and the noise effects that you can see.
 I'm going to go over it at the end.
 First let me take the effect apart and explain its layers.
@@ -49,11 +57,12 @@ It's quite simple:
 First of all, we have the two texture inputs.
 One is the mask, and one is the fill texture.
 There are three distinct areas of the shader:
+
 Here we multiply the mask with the color.
 The rest of the shader is concerned with the alpha.
 The whole bottom is concerned with adding visual interest to the effect, so adds some noise.
 In this case I am using a cellular noise 3d.
-Other noise types would work as well.
+You can use any other type of noise of course.
 The upper left area is concerned with modifying the UV for the fill texture.
 
 --> Example set edge rotation to 0.5.

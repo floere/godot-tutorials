@@ -1,6 +1,6 @@
 extends Node2D
 
-onready var liquid = $Liquid
+onready var liquid = $Sprite/Liquid
 
 var t = 0
 
